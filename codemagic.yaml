@@ -5,16 +5,17 @@ workflows:
     max_build_duration: 60
     instance_type: mac_mini_m1
     environment:
-      groups:
-        - android_credentials
       vars:
         JAVA_VERSION: "17"
     scripts:
       - name: Set up local.properties
         script: |
+          cd برنامج
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
       - name: Build Android APK
         script: |
+          cd برنامج
+          chmod +x gradlew
           ./gradlew assembleRelease
     artifacts:
-      - app/build/outputs/apk/**/*.apk
+      - برنامج/app/build/outputs/apk/**/*.apk
