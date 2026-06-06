@@ -12,6 +12,7 @@ workflows:
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
       - name: Build Android APK
         script: |
+          curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.7.0/gradlew -o gradlew
           chmod +x gradlew
           ./gradlew assembleRelease
     artifacts:
