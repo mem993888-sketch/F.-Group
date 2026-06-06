@@ -1,4 +1,3 @@
-
 workflows:
   android-xml-workflow:
     name: Android XML Build Workflow
@@ -10,12 +9,10 @@ workflows:
     scripts:
       - name: Set up local.properties
         script: |
-          cd برنامج
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
       - name: Build Android APK
         script: |
-          cd برنامج
           chmod +x gradlew
           ./gradlew assembleRelease
     artifacts:
-      - برنامج/app/build/outputs/apk/**/*.apk
+      - app/build/outputs/apk/**/*.apk
