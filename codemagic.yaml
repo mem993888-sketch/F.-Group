@@ -1,11 +1,14 @@
+
 workflows:
   android-xml-workflow:
     name: Android XML Build Workflow
     max_build_duration: 60
     instance_type: mac_mini_m1
     environment:
-      android_ndk: 25.2.9519653
-      java: 17
+      groups:
+        - android_credentials
+      vars:
+        JAVA_VERSION: "17"
     scripts:
       - name: Set up local.properties
         script: |
