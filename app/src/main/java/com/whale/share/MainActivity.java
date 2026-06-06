@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.whale.share.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
